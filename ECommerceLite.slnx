@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ECommerceLite.Api/ECommerceLite.Api.csproj" />
+  <Project Path="ECommerceLite.CartService/ECommerceLite.CartService.csproj" />
+  <Project Path="ECommerceLite.OrderWorker/ECommerceLite.OrderWorker.csproj" />
+  <Project Path="ECommerceLite.ServiceDefaults/ECommerceLite.ServiceDefaults.csproj" />
+  <Project Path="ECommerceLite/ECommerceLite.csproj" />
+</Solution>

@@ -1,0 +1,26 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.1.2">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>81e447e2-1cba-454c-ad39-e1508ed1ceba</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.1.2" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="9.5.2" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.1.2" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="13.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../ECommerceLite.Api/ECommerceLite.Api.csproj" />
+    <ProjectReference Include="../ECommerceLite.CartService/ECommerceLite.CartService.csproj" />
+    <ProjectReference Include="../ECommerceLite.OrderWorker/ECommerceLite.OrderWorker.csproj" />
+    <ProjectReference Include="../ECommerceLite.ServiceDefaults/ECommerceLite.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+</Project>

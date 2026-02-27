@@ -1,0 +1,4 @@
+{
+    "dotnet.defaultSolution": "ECommerceLite.slnx",
+    "dotnet.preferVisualStudioCodeFileSystemWatcher": true
+}
