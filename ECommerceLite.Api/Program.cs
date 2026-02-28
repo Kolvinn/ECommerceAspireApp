@@ -6,13 +6,15 @@ using Microsoft.Extensions.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.AddNpgsqlDbContext<DataDbContext>("UserDatabase");
+builder.AddNpgsqlDbContext<DataDbContext>("postgresdb");
 
 
 
 builder.Services.AddOpenApi();
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+
+
 
 builder.Services.AddProblemDetails();
 //builder.Services.defa
@@ -35,4 +37,5 @@ app.MapDbEndpoints();
 
 using var scope = app.Services.CreateScope();
 var dbContext = scope.ServiceProvider.GetRequiredService<DataDbContext>();
-await dbContext.Database.MigrateAsync();
+app.Run();
+//await dbContext.Database.MigrateAsync();
