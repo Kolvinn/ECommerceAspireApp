@@ -8,18 +8,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddNpgsqlDbContext<DataDbContext>("postgresdb");
 
-
-
-builder.Services.AddOpenApi();
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
 
-
-
 builder.Services.AddProblemDetails();
-//builder.Services.defa
-//builder.Services.AddDbContext<UserDb>(options => options.UseSqlite("TodoList"));
-//builder.Services.AddNpgsqlDataSource();
+
+builder.Services.AddOpenApi();
+builder.Services.AddAuthentication()
+                .AddKeycloakJwtBearer
+                (
+                    serviceName: "keycloak",
+                    realm: "master",
+                    options =>
+                    {
+                        options.Audience = "api-audience";
+
+                        // For development only - disable HTTPS metadata validation
+                        // In production, use explicit Authority configuration instead
+                        if (builder.Environment.IsDevelopment())
+                        {
+                            options.RequireHttpsMetadata = false;
+                        }
+                    });
 var app = builder.Build();
 
 

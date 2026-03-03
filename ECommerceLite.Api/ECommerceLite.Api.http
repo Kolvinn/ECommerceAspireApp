@@ -1,11 +1,11 @@
-@ECommerceLite.Api_HostAddress = http://localhost:5240
+###
+@productsurl= http://localhost:5240
 
-GET {{ECommerceLite.Api_HostAddress}}/todos/
-Accept: application/json
+GET {{productsurl}}/Product
 
 ###
 
-GET {{ECommerceLite.Api_HostAddress}}/todos/1
+GET {{productsurl}}/products/1
 Accept: application/json
 
 ###
